@@ -1,0 +1,8 @@
+mlflow==2.22.2
+sqlalchemy==2.0.40
+scikit-learn==1.6.1
+pandas==2.2.3
+numpy==2.2.6
+matplotlib==3.10.3
+scipy==1.18.1
+requests==2.32.3
