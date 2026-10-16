@@ -1,0 +1,15 @@
+{
+  "selected_by_cv": "SVM_lineal",
+  "delta_f1_svm_minus_logistica": 0.021357117987770846,
+  "bootstrap_paired_stratified_95_ci": [
+    -0.005790635889987844,
+    0.04772400023473527
+  ],
+  "bootstrap_repeats": 2000,
+  "mcnemar_exact_p": 0.18924713134765625,
+  "discordant_logistic_only_correct": 7,
+  "discordant_svm_only_correct": 14,
+  "dummy_accuracy": 0.6128318584070797,
+  "dummy_f1_macro": 0.25331504343850025,
+  "caveat": "IC condicional al test; no mide incertidumbre de reentrenamiento ni deriva. CV usada para ajustar, no estimaci\u00f3n final no sesgada."
+}

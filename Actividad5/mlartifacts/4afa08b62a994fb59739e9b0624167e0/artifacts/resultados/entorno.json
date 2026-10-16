@@ -1,0 +1,13 @@
+{
+  "python": "3.12.14",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "mlflow": "2.22.2",
+  "numpy": "2.2.6",
+  "pandas": "2.2.3",
+  "seed": 20261015,
+  "execution": "local CPU; notebook Colab provided separately",
+  "run_ids": [
+    "d6b1e315b58e46bf9b7f467eec70beaf",
+    "b82e892e82b7451e9da7a0b4cda899f5"
+  ]
+}
