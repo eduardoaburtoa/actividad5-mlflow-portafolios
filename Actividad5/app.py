@@ -1,6 +1,7 @@
 """Vértice AI: demostración académica, sin datos reales ni órdenes de inversión."""
 from pathlib import Path
 import pickle
+import sqlite3
 import pandas as pd
 import streamlit as st
 
@@ -23,7 +24,7 @@ def modelo():
         return pickle.load(f)
 
 res, clientes = datos()
-a, b, c = st.tabs(['Resultados y evidencia', 'Clasificar una noticia', 'Simulación de costos'])
+a, b, c, d = st.tabs(['Resultados y evidencia', 'Clasificar una noticia', 'Simulación de costos', 'MLflow · Experimentos'])
 with a:
     x,y,z=st.columns(3)
     x.metric('Noticias de prueba', '452')
@@ -78,3 +79,20 @@ with c:
     st.download_button('Descargar clientes ficticios',clientes.to_csv(index=False).encode('utf-8'), 'clientes_ficticios.csv','text/csv')
 st.divider()
 st.caption('Financial PhraseBank: CC BY-NC-SA 3.0. Uso académico. Las marcas pertenecen a sus titulares; esta demostración no es un producto oficial de BBVA.')
+
+with d:
+    st.subheader('Trazabilidad real de MLflow')
+    st.write('Consulto la base MLflow incluida en la entrega, en modo de solo lectura. Este visor no sustituye el panel oficial: permite revisar sus registros desde la demostración.')
+    with sqlite3.connect((ROOT/'mlflow.db').as_uri()+'?mode=ro', uri=True) as db:
+        runs = pd.read_sql_query('SELECT run_uuid AS run_id, name AS nombre, status AS estado FROM runs ORDER BY start_time DESC', db)
+        st.dataframe(runs, hide_index=True)
+        rid = st.selectbox('Corrida MLflow', runs.run_id, format_func=lambda v: f"{runs.set_index('run_id').loc[v,'nombre']} · {v}")
+        st.write('Parámetros registrados')
+        st.dataframe(pd.read_sql_query('SELECT key AS parametro,value FROM params WHERE run_uuid=?',db,params=[rid]),hide_index=True)
+        st.write('Métricas registradas')
+        st.dataframe(pd.read_sql_query('SELECT key AS metrica,value FROM latest_metrics WHERE run_uuid=?',db,params=[rid]),hide_index=True)
+    st.caption('27 corridas finales; 13 registros anteriores conservados, incluido un intento fallido. Los IDs permiten distinguirlos.')
+    st.download_button('Descargar exportación de MLflow', (ROOT/'evidencias/mlflow_runs.csv').read_bytes(), 'mlflow_runs.csv', 'text/csv')
+    st.image(str(ROOT/'evidencias/mlflow_svm.png'), caption='Captura auténtica del panel oficial MLflow: modelo SVM.')
+    st.code('cd Actividad5\npython fuentes/reubicar_mlflow.py\npython fuentes/verificar_mlflow.py\nmlflow ui --backend-store-uri sqlite:///mlflow.db --host 127.0.0.1 --port 5055',language='bash')
+    st.caption('Abre http://127.0.0.1:5055 en el equipo donde ejecutes los comandos. GitHub almacena la evidencia; no hospeda el servidor MLflow.')

@@ -22,3 +22,13 @@ calibración, evaluación temporal y control de noticias relacionadas.
 ## 1.1.0 · Aplicación de demostración
 
 Se agrega Streamlit con resultados, inferencia SVM y simulación de costos para clientes ficticios. No cambia el entrenamiento ni las métricas entregadas.
+
+## 1.2.0 · 16 de octubre de 2026 · Auditoría de entrega
+
+- Matriz de cobertura con enlaces directos para los cuatro criterios y cada entregable.
+- Capturas de MLflow visibles dentro de la guía de evidencias.
+- Visor de corridas, parámetros y métricas reales de SQLite integrado en Streamlit.
+- Verificación automática de hashes, parámetros, dataset, 24 candidatos, artefactos y cinco métricas recalculadas con los modelos recargados.
+- Corrección de rutas de artefactos al entrenar en otro equipo; notebook actualizado.
+- Conservación del código de entrenamiento original para verificar su hash histórico.
+- No se reemplazaron resultados originales ni se afirmó un despliegue público de MLflow.

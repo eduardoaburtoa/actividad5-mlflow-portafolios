@@ -149,3 +149,10 @@ rama `main`, archivo principal `streamlit_app.py`, Python 3.12. La raíz incluye
 dependencias y el tema azul. Subir a GitHub no equivale a desplegar en Community Cloud.
 
 [Reporte editable en Google Docs](https://docs.google.com/document/d/10zePpNRuSKNphrLIlZZ3mavDB5lAiLrBx5D90n2A80s/edit).
+
+## Revisión de entrega · 16/10/2026
+
+[Consultar matriz completa de rúbrica y entregables](REVISION_RUBRICA.md).
+Después de instalar las dependencias, `python fuentes/verificar_mlflow.py` comprueba la evidencia MLflow, recarga ambos modelos y recalcula las cinco métricas del test. Las capturas están visibles en [la guía de evidencias](evidencias/README.md). Streamlit incluye un visor de corridas, parámetros y métricas leído directamente de SQLite.
+
+El entrenamiento local reubica automáticamente las rutas de artefactos al cambiar de equipo. La evidencia del 15/10/2026 se vincula con el código original preservado en `fuentes/historico/train_20261015.py`; el código actual añade la corrección de portabilidad. No se atribuyen los resultados históricos al código modificado.

@@ -1,0 +1,39 @@
+{
+  "estado": "OK",
+  "corridas_modelos": [
+    {
+      "modelo": "Logistica",
+      "run_id": "d6b1e315b58e46bf9b7f467eec70beaf",
+      "candidatos": 12,
+      "metricas_verificadas": {
+        "accuracy": 0.8827433628318584,
+        "precision_macro": 0.8458096886922509,
+        "recall_macro": 0.8387125019943676,
+        "f1_macro": 0.84217897449569,
+        "roc_auc_ovr_macro": 0.9615738742041874
+      }
+    },
+    {
+      "modelo": "SVM_lineal",
+      "run_id": "b82e892e82b7451e9da7a0b4cda899f5",
+      "candidatos": 12,
+      "metricas_verificadas": {
+        "accuracy": 0.8982300884955752,
+        "precision_macro": 0.8894961346945554,
+        "recall_macro": 0.8428749765953816,
+        "f1_macro": 0.8635360924834609,
+        "roc_auc_ovr_macro": 0.9638600628413433
+      }
+    }
+  ],
+  "comprobaciones": [
+    "parámetros y hashes",
+    "cinco métricas recalculadas",
+    "modelos recargados",
+    "predicciones idénticas",
+    "24 candidatos enlazados",
+    "dataset registrado",
+    "artefactos presentes"
+  ],
+  "corridas_totales": 40
+}

@@ -22,3 +22,11 @@ Consulta resultados, clasifica noticias en inglés con la SVM entrenada y explor
 ## Resultado
 
 SVM: F1 macro 0.8635; regresión logística: 0.8422. La ventaja no es estadísticamente concluyente. Entrenamiento real en CPU, 24 configuraciones evaluadas con cinco folds, modelos y evidencias incluidos. Datos financieros públicos con licencia académica no comercial; no contienen datos de clientes reales.
+
+## Revisión de entrega y MLflow
+
+- [Matriz de cobertura de la rúbrica y entregables](Actividad5/REVISION_RUBRICA.md).
+- [Capturas del panel oficial y guía MLflow](Actividad5/evidencias/README.md).
+- [Auditoría ejecutada de parámetros, métricas y modelos](Actividad5/evidencias/verificacion_mlflow.json).
+
+Streamlit incorpora la pestaña **MLflow · Experimentos**, que consulta los registros reales de la base entregada. Para abrir el panel oficial, sigue la guía de evidencias. Ambos pueden ejecutarse localmente; GitHub conserva los archivos y no hospeda esos servidores.

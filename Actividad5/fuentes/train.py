@@ -23,6 +23,9 @@ def metrics(y,p,scores):
     return dict(accuracy=accuracy_score(y,p),precision_macro=pma,recall_macro=rma,f1_macro=fma,roc_auc_ovr_macro=auc)
 
 def main():
+    if not os.environ.get('MLFLOW_TRACKING_URI'):
+        from reubicar_mlflow import reubicar
+        reubicar()
     df,manifest=prepare();out=ROOT/'resultados';out.mkdir(exist_ok=True)
     mlflow.set_tracking_uri(os.environ.get('MLFLOW_TRACKING_URI',f'sqlite:///{ROOT / "mlflow.db"}'))
     experiment='Actividad5_FinancialPhraseBank_v1'
