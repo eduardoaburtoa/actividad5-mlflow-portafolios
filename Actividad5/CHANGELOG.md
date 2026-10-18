@@ -32,3 +32,10 @@ Se agrega Streamlit con resultados, inferencia SVM y simulación de costos para 
 - Corrección de rutas de artefactos al entrenar en otro equipo; notebook actualizado.
 - Conservación del código de entrenamiento original para verificar su hash histórico.
 - No se reemplazaron resultados originales ni se afirmó un despliegue público de MLflow.
+
+## 1.3.0 · 18 de octubre de 2026 · Portada de entrega
+
+- Portada organizada como punto de entrada: reporte PDF, Word, Google Docs, Colab, datos, Streamlit y MLflow.
+- Resultados, gráficos, captura auténtica de MLflow y matriz de rúbrica visibles desde el README principal.
+- Guías separadas para consultar evidencia, ejecutar la aplicación y entrenar una nueva corrida.
+- Enlaces internos comprobados; se mantiene la distinción entre archivos publicados y servicios ejecutados localmente.
